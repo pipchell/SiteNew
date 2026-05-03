@@ -21,4 +21,8 @@ Disallow: /welcome
 Disallow: /marvin
 Disallow: /badfest
 
+Disallow: /link
+Disallow: /link/404
+Disallow: /link/invalid
+
 Sitemap: https://pipchell.com/sitemap.xml
