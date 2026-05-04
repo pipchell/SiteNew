@@ -96,6 +96,7 @@
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
@@ -152,6 +153,7 @@
 
 @media (max-width: 736px) {
 
+    /* show hamburger */
     #navToggle {
         display: flex;
         align-items: center;
@@ -160,34 +162,49 @@
         padding: 0.45em 0.7em;
     }
 
+    /* stack layout */
     #floatingNav {
         flex-direction: column;
         align-items: flex-start;
     }
 
+    /* wrap links ONLY on mobile */
     #floatingNav .nav-links {
         display: none;
         flex-direction: column;
         gap: 0.3rem;
-        margin-top: 0.3rem;
         width: 100%;
     }
 
     #floatingNav.open .nav-links {
         display: flex;
     }
+
+    /* hide direct links on mobile */
+    #floatingNav > a.button {
+        display: none;
+    }
 }
 </style>
 
 <!-- Floating Nav -->
 <nav id="floatingNav" aria-label="Floating Navigation">
+
+    <!-- Hamburger -->
     <div id="navToggle" class="button icon solid fa-bars"></div>
 
+    <!-- Desktop links (unchanged) -->
+    <a href="#one" class="button icon solid fa-user scrolly">About</a>
+    <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
+    <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
+
+    <!-- Mobile dropdown -->
     <div class="nav-links">
         <a href="#one" class="button icon solid fa-user scrolly">About</a>
         <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
         <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
     </div>
+
 </nav>
 
 <script>
@@ -213,11 +230,10 @@
         window.addEventListener('scroll', check, {passive: true});
         check();
 
-        if (toggle) {
-            toggle.addEventListener('click', function(){
-                nav.classList.toggle('open');
-            });
-        }
+        // toggle mobile menu
+        toggle.addEventListener('click', function(){
+            nav.classList.toggle('open');
+        });
     }
 
     if (document.readyState === 'loading') {
@@ -227,7 +243,6 @@
     }
 })();
 </script>
-
 	
 		<!-- Header -->
 			<header id="header">
