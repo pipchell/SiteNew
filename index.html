@@ -95,6 +95,7 @@
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
@@ -144,12 +145,11 @@
     background: rgba(144,144,144,0.075);
 }
 
-/* Hamburger (hidden on desktop) */
+/* --- MOBILE ONLY --- */
 #navToggle {
     display: none;
 }
 
-/* Mobile only */
 @media (max-width: 736px) {
 
     #navToggle {
@@ -201,11 +201,9 @@
 
         function check() {
             var r = header.getBoundingClientRect();
+            var fullyOnHeader = r.top >= 0 && r.bottom <= window.innerHeight;
 
-            // Show only when header is NOT fully visible
-            var fullyVisible = r.top >= 0 && r.bottom <= window.innerHeight;
-
-            if (fullyVisible) {
+            if (fullyOnHeader) {
                 nav.classList.remove('visible');
             } else {
                 nav.classList.add('visible');
@@ -215,7 +213,6 @@
         window.addEventListener('scroll', check, {passive: true});
         check();
 
-        // Mobile toggle
         if (toggle) {
             toggle.addEventListener('click', function(){
                 nav.classList.toggle('open');
