@@ -98,6 +98,7 @@
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
@@ -147,26 +148,28 @@
     background: rgba(144,144,144,0.075);
 }
 
-/* hide hamburger + mobile menu on desktop */
+/* hide mobile elements on desktop */
 #navToggle,
 #floatingNav .nav-links {
     display: none;
 }
 
-/* --- MOBILE ONLY --- */
+/* --- MOBILE --- */
 @media (max-width: 736px) {
+
+    #floatingNav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
     #navToggle {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.9rem;
-        padding: 0.45em 0.7em;
-    }
 
-    #floatingNav {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 40px;
+        height: 40px;
+        padding: 0;
     }
 
     /* hide desktop links */
@@ -174,17 +177,24 @@
         display: none;
     }
 
-    /* show dropdown when open */
+    /* dropdown aligned with button edge */
     #floatingNav .nav-links {
         display: none;
         flex-direction: column;
         gap: 0.3rem;
-        width: 100%;
         margin-top: 0.3rem;
+
+        width: auto;
+        min-width: 140px;
     }
 
     #floatingNav.open .nav-links {
         display: flex;
+    }
+
+    #floatingNav .nav-links a.button {
+        width: 100%;
+        justify-content: flex-start;
     }
 }
 </style>
@@ -195,12 +205,12 @@
     <!-- Hamburger -->
     <div id="navToggle" class="button icon solid fa-bars"></div>
 
-    <!-- Desktop links -->
+    <!-- Desktop -->
     <a href="#one" class="button icon solid fa-user scrolly">About</a>
     <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
     <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
 
-    <!-- Mobile dropdown -->
+    <!-- Mobile -->
     <div class="nav-links">
         <a href="#one" class="button icon solid fa-user scrolly">About</a>
         <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
@@ -220,12 +230,14 @@
 
         function check() {
             var r = header.getBoundingClientRect();
-            var fullyOnHeader = r.top >= 0 && r.bottom <= window.innerHeight;
 
-            if (fullyOnHeader) {
-                nav.classList.remove('visible');
-            } else {
+            // show only AFTER header is passed
+            var passedHeader = r.bottom <= 0;
+
+            if (passedHeader) {
                 nav.classList.add('visible');
+            } else {
+                nav.classList.remove('visible');
             }
         }
 
