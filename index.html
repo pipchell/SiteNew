@@ -93,6 +93,7 @@
 
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
@@ -130,35 +131,76 @@
     border-radius: 6px !important;
     font-size: 0.75rem;
     padding: 0.45em 0.9em;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     box-shadow: inset 0 0 0 2px #e6e6e6;
 }
 
 #floatingNav a.button:hover {
     background: rgba(144,144,144,0.075);
 }
+
+/* Hamburger button */
+#navToggle {
+    display: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.45em 0.7em;
+}
+
+/* Mobile */
+@media (max-width: 736px) {
+    #floatingNav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.3rem;
+    }
+
+    #navToggle {
+        display: block;
+    }
+
+    #floatingNav .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0.3rem;
+        margin-top: 0.3rem;
+    }
+
+    #floatingNav.open .nav-links {
+        display: flex;
+    }
+}
 </style>
 
 <!-- Floating Nav -->
 <nav id="floatingNav" aria-label="Floating Navigation">
-    <a href="#one" class="button icon solid fa-user scrolly">About</a>
-    <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
-    <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
+    <div id="navToggle" class="button icon solid fa-bars"></div>
+
+    <div class="nav-links">
+        <a href="#one" class="button icon solid fa-user scrolly">About</a>
+        <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
+        <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
+    </div>
 </nav>
 
 <script>
 (function(){
     function initFloatingNav() {
         var nav = document.getElementById('floatingNav');
-        if (!nav) return;
+        var header = document.getElementById('header');
+        var toggle = document.getElementById('navToggle');
+
+        if (!nav || !header) return;
 
         function check() {
-            // Hide only when near top (header area)
-            if (window.scrollY < 120) {
+            var r = header.getBoundingClientRect();
+
+            // Show ONLY when header is NOT fully visible
+            var fullyVisible = r.top >= 0 && r.bottom <= window.innerHeight;
+
+            if (fullyVisible) {
                 nav.classList.remove('visible');
             } else {
                 nav.classList.add('visible');
@@ -167,6 +209,13 @@
 
         window.addEventListener('scroll', check, {passive: true});
         check();
+
+        // Toggle mobile menu
+        if (toggle) {
+            toggle.addEventListener('click', function(){
+                nav.classList.toggle('open');
+            });
+        }
     }
 
     if (document.readyState === 'loading') {
@@ -176,7 +225,6 @@
     }
 })();
 </script>
-
 		<!-- Header -->
 			<header id="header">
 				<div class="content" style= "max-width: 750px;">
