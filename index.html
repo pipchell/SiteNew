@@ -154,16 +154,11 @@
 (function(){
     function initFloatingNav() {
         var nav = document.getElementById('floatingNav');
-        var header = document.getElementById('header');
-        if (!nav || !header) return;
+        if (!nav) return;
 
         function check() {
-            var r = header.getBoundingClientRect();
-
-            // Only hide when header is FULLY visible
-            var fullyOnHeader = r.top >= 0 && r.bottom <= window.innerHeight;
-
-            if (fullyOnHeader) {
+            // Hide only when near top (header area)
+            if (window.scrollY < 120) {
                 nav.classList.remove('visible');
             } else {
                 nav.classList.add('visible');
@@ -181,7 +176,6 @@
     }
 })();
 </script>
-
 
 		<!-- Header -->
 			<header id="header">
