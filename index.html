@@ -81,7 +81,7 @@
 }
 </script>
 
-	<script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -91,25 +91,73 @@
 }
 </script>
 
+<!-- Floating Nav Style -->
+<style>
+#floatingNav {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: #fbfbfb;
+    border: 1px solid #e6e6e6;
+    border-radius: 50px;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#floatingNav.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+#floatingNav a.button {
+    border-radius: 50px !important;
+    font-size: 0.8rem;
+    padding: 0.5em 1.1em;
+}
+</style>
 
-
-
-
-
-
-
-
-
-
-
-
-
+</head>
 
 <body class="is-preload">
 
+<!-- Floating Nav -->
+<nav id="floatingNav" aria-label="Floating Navigation">
+    <a href="#one" class="button icon solid fa-user scrolly">About</a>
+    <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
+    <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
+</nav>
 
-
-		
+<script>
+(function(){
+    function initFloatingNav() {
+        var nav = document.getElementById('floatingNav');
+        var header = document.getElementById('header');
+        if (!nav || !header) return;
+        function check() {
+            var r = header.getBoundingClientRect();
+            var onHeader = r.bottom > 0 && r.top < window.innerHeight;
+            if (onHeader) {
+                nav.classList.remove('visible');
+            } else {
+                nav.classList.add('visible');
+            }
+        }
+        window.addEventListener('scroll', check, {passive: true});
+        check();
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFloatingNav);
+    } else {
+        initFloatingNav();
+    }
+})();
+</script>
 
 		<!-- Header -->
 			<header id="header">
