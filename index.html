@@ -99,6 +99,7 @@
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
@@ -160,16 +161,25 @@
     #floatingNav {
         flex-direction: column;
         align-items: flex-start;
+        padding: 0.4rem; /* equal padding for alignment */
     }
 
     #navToggle {
         display: flex;
+
         align-items: center;
         justify-content: center;
 
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         padding: 0;
+
+        font-size: 1rem;
+    }
+
+    /* enlarge icon when open */
+    #floatingNav.open #navToggle {
+        font-size: 1.25rem;
     }
 
     /* hide desktop links */
@@ -177,24 +187,25 @@
         display: none;
     }
 
-    /* dropdown aligned with button edge */
+    /* dropdown perfectly aligned */
     #floatingNav .nav-links {
         display: none;
         flex-direction: column;
         gap: 0.3rem;
         margin-top: 0.3rem;
 
-        width: auto;
-        min-width: 140px;
+        width: 42px; /* SAME as hamburger */
     }
 
     #floatingNav.open .nav-links {
         display: flex;
     }
 
+    /* buttons match width + align */
     #floatingNav .nav-links a.button {
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
+        padding: 0.45em 0; /* remove side padding for alignment */
     }
 }
 </style>
@@ -212,9 +223,9 @@
 
     <!-- Mobile -->
     <div class="nav-links">
-        <a href="#one" class="button icon solid fa-user scrolly">About</a>
-        <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
-        <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
+        <a href="#one" class="button icon solid fa-user scrolly"></a>
+        <a href="#three" class="button icon brands fa-github scrolly"></a>
+        <a href="#contact" class="button icon solid fa-envelope scrolly"></a>
     </div>
 
 </nav>
@@ -230,8 +241,6 @@
 
         function check() {
             var r = header.getBoundingClientRect();
-
-            // show only AFTER header is passed
             var passedHeader = r.bottom <= 0;
 
             if (passedHeader) {
