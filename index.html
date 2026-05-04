@@ -100,6 +100,7 @@
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
@@ -133,6 +134,7 @@
     transform: translateY(0);
 }
 
+/* Desktop buttons */
 #floatingNav a.button {
     border-radius: 6px !important;
     font-size: 0.75rem;
@@ -149,63 +151,74 @@
     background: rgba(144,144,144,0.075);
 }
 
-/* hide mobile elements on desktop */
+/* hide mobile-only stuff on desktop */
 #navToggle,
 #floatingNav .nav-links {
     display: none;
 }
 
-/* --- MOBILE --- */
+/* ---------------- MOBILE ---------------- */
 @media (max-width: 736px) {
 
     #floatingNav {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0.4rem; /* equal padding for alignment */
+        padding: 0.5rem;
     }
 
+    /* hamburger button */
     #navToggle {
         display: flex;
-
         align-items: center;
         justify-content: center;
 
-        width: 42px;
-        height: 42px;
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.15rem;
         padding: 0;
 
-        font-size: 1rem;
+        box-sizing: border-box;
     }
 
-    /* enlarge icon when open */
+    /* enlarge hamburger when open */
     #floatingNav.open #navToggle {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
     }
 
-    /* hide desktop links */
-    #floatingNav > a.button {
-        display: none;
-    }
-
-    /* dropdown perfectly aligned */
+    /* dropdown container */
     #floatingNav .nav-links {
         display: none;
         flex-direction: column;
-        gap: 0.3rem;
-        margin-top: 0.3rem;
+        gap: 0.45rem;
 
-        width: 42px; /* SAME as hamburger */
+        margin-top: 0.5rem;
+
+        width: 50px;
     }
 
     #floatingNav.open .nav-links {
         display: flex;
     }
 
-    /* buttons match width + align */
+    /* FULL FIX: perfect centering */
     #floatingNav .nav-links a.button {
-        width: 100%;
+        width: 50px;
+        height: 50px;
+
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        align-items: center;
         justify-content: center;
-        padding: 0.45em 0; /* remove side padding for alignment */
+
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    #floatingNav .nav-links a.button i {
+        margin: 0 !important;
     }
 }
 </style>
@@ -223,9 +236,9 @@
 
     <!-- Mobile -->
     <div class="nav-links">
-        <a href="#one" class="button icon solid fa-user scrolly"></a>
-        <a href="#three" class="button icon brands fa-github scrolly"></a>
-        <a href="#contact" class="button icon solid fa-envelope scrolly"></a>
+        <a href="#one" class="button icon solid fa-user scrolly">About</a>
+        <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
+        <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
     </div>
 
 </nav>
