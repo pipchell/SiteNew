@@ -92,12 +92,13 @@
 </script>
 
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
     top: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(-8px);
+    left: 1.5rem;
+    transform: translateY(-8px);
 
     background: rgba(251,251,251,0.9);
     backdrop-filter: blur(10px);
@@ -108,9 +109,8 @@
     display: flex;
     gap: 0.4rem;
 
-    /* FIX */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 
@@ -123,7 +123,7 @@
 #floatingNav.visible {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 #floatingNav a.button {
@@ -131,7 +131,6 @@
     font-size: 0.75rem;
     padding: 0.45em 0.9em;
 
-    /* FIX */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,10 +142,6 @@
     background: rgba(144,144,144,0.075);
 }
 </style>
-
-</head>
-
-<body class="is-preload">
 
 <!-- Floating Nav -->
 <nav id="floatingNav" aria-label="Floating Navigation">
@@ -161,18 +156,24 @@
         var nav = document.getElementById('floatingNav');
         var header = document.getElementById('header');
         if (!nav || !header) return;
+
         function check() {
             var r = header.getBoundingClientRect();
-            var onHeader = r.bottom > 0 && r.top < window.innerHeight;
-            if (onHeader) {
+
+            // Only hide when header is FULLY visible
+            var fullyOnHeader = r.top >= 0 && r.bottom <= window.innerHeight;
+
+            if (fullyOnHeader) {
                 nav.classList.remove('visible');
             } else {
                 nav.classList.add('visible');
             }
         }
+
         window.addEventListener('scroll', check, {passive: true});
         check();
     }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initFloatingNav);
     } else {
@@ -180,6 +181,7 @@
     }
 })();
 </script>
+
 
 		<!-- Header -->
 			<header id="header">
