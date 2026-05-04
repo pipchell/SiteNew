@@ -97,6 +97,7 @@
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
 <!-- Floating Nav Style -->
+<!-- Floating Nav Style -->
 <style>
 #floatingNav {
     position: fixed;
@@ -146,14 +147,15 @@
     background: rgba(144,144,144,0.075);
 }
 
-/* --- MOBILE ONLY --- */
-#navToggle {
+/* hide hamburger + mobile menu on desktop */
+#navToggle,
+#floatingNav .nav-links {
     display: none;
 }
 
+/* --- MOBILE ONLY --- */
 @media (max-width: 736px) {
 
-    /* show hamburger */
     #navToggle {
         display: flex;
         align-items: center;
@@ -162,27 +164,27 @@
         padding: 0.45em 0.7em;
     }
 
-    /* stack layout */
     #floatingNav {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    /* wrap links ONLY on mobile */
+    /* hide desktop links */
+    #floatingNav > a.button {
+        display: none;
+    }
+
+    /* show dropdown when open */
     #floatingNav .nav-links {
         display: none;
         flex-direction: column;
         gap: 0.3rem;
         width: 100%;
+        margin-top: 0.3rem;
     }
 
     #floatingNav.open .nav-links {
         display: flex;
-    }
-
-    /* hide direct links on mobile */
-    #floatingNav > a.button {
-        display: none;
     }
 }
 </style>
@@ -193,7 +195,7 @@
     <!-- Hamburger -->
     <div id="navToggle" class="button icon solid fa-bars"></div>
 
-    <!-- Desktop links (unchanged) -->
+    <!-- Desktop links -->
     <a href="#one" class="button icon solid fa-user scrolly">About</a>
     <a href="#three" class="button icon brands fa-github scrolly">Projects</a>
     <a href="#contact" class="button icon solid fa-envelope scrolly">Contact</a>
@@ -230,7 +232,6 @@
         window.addEventListener('scroll', check, {passive: true});
         check();
 
-        // toggle mobile menu
         toggle.addEventListener('click', function(){
             nav.classList.toggle('open');
         });
