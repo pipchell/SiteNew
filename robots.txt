@@ -17,7 +17,6 @@ Disallow: /stuff/the-hub
 
 Disallow: /tv
 Disallow: /help
-Disallow: /welcome
 Disallow: /marvin
 Disallow: /badfest
 
