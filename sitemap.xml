@@ -37,12 +37,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://pipchell.com/welcome</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://pipchell.com/stuff</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
