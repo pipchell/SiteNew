@@ -5,6 +5,7 @@ Allow: /me
 Allow: /directory
 Allow: /support
 Allow: /brandhub
+Allow: /terms
 
 Allow: /stuff
 Allow: /stuff/bins
