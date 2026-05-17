@@ -7,12 +7,3 @@
 [![Visit](https://img.shields.io/badge/Visit-red?logo=github)](https://pipchell.com)
 [![Stars](https://img.shields.io/github/stars/pipchell/sitenew?style=flat&logo=github)](https://github.com/pipchell/sitenew/stargazers)
 
-# Contributing:
-
-### If contributing:
-- Keep the single-file structure
-- Avoid adding unnecessary dependencies
-- Preserve readability and simplicity
-- Verify layout on both mobile and desktop
-
-
