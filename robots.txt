@@ -20,6 +20,7 @@ Disallow: /tv
 Disallow: /help
 Disallow: /marvin
 Disallow: /badfest
+Disallow: /dev
 
 Disallow: /link
 Disallow: /link/404
