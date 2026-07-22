@@ -1,17 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="3; url=https://pipchell.com/phones/directory">
-    <title>Redirecting...</title>
-    <script>
-        setTimeout(function() {
-            window.location.href = "https://pipchell.com/phones/directory";
-        }, 3000);
-    </script>
+<meta charset="UTF-8">
+<title>Pip Chell - Phone Directory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,nofollow">
+<meta http-equiv="refresh" content="3; url=https://pipchell.com/phones/directory">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+<meta name="description" content="All network phone extensions, in one place.">
+
+<style>
+body {
+  margin: 0;
+  background: #fbfbfb;
+  color: #3d3d3d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #4696e5;
+  padding: 24px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(70, 150, 229, 0.2);
+}
+
+.card img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: block;
+  position: relative;
+  top: 2px;
+}
+
+.info strong {
+  display: block;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.info p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, .9);
+}
+
+.info small {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, .8);
+}
+
+.info a {
+  color: white;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.info a:hover {
+  color: rgba(255, 255, 255, .8);
+}
+
+@media (max-width: 600px) {
+  .container { padding: 16px; }
+  .info strong { font-size: 18px; }
+}
+</style>
+
+<script>
+  setTimeout(function() {
+    window.location.href = "https://pipchell.com/phones/directory";
+  }, 3000);
+</script>
 </head>
+
 <body>
-    <p>Redirecting...</p>
-    <p>If you are not redirected, <a href="https://pipchell.com/phones/directory">click here</a>.</p>
+
+<div class="container">
+  <div class="card">
+    <img src="/icons/d.png" alt="">
+    <div class="info">
+      <strong>Redirecting...</strong>
+      <p>Taking you to the phone directory in 3 seconds.</p>
+      <small>If you are not redirected, <a href="https://pipchell.com/phones/directory">click here</a>.</small>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
