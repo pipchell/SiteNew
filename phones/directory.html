@@ -53,7 +53,7 @@ header p {
 
 .card {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start; /* Keeps children aligned to the top */
   gap: 16px;
   background: #4696e5;
   padding: 18px;
@@ -67,11 +67,14 @@ header p {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
+  display: block; /* Prevents inline whitespace gaps */
 }
 
 .info strong {
   display: block;
   font-size: 17px;
+  line-height: 1; /* Removes extra line-height spacing above the text */
+  margin-bottom: 4px; /* Restores small space between title and extension */
 }
 
 .info span {
@@ -128,7 +131,7 @@ header p {
 <div class="container">
 
 <header>
-  <h1>Phone Directory</h1>
+  <h1>Pip Chell - Phone Directory</h1>
   <p>People · Call Handling · Codes</p>
 </header>
 
