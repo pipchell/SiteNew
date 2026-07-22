@@ -7,328 +7,220 @@
 <meta name="robots" content="index,nofollow">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-<meta name="description" content="All network phone extentions, in one place.">
+<meta name="description" content="All network phone extensions, in one place.">
 
 <style>
-
-body{
-margin:0;
-background:#fbfbfb;
-color:#3d3d3d;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+body {
+  margin: 0;
+  background: #fbfbfb;
+  color: #3d3d3d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:60px 20px;
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 48px 24px 60px;
 }
 
-header{
-text-align:center;
-margin-bottom:50px;
+header {
+  text-align: center;
+  margin-bottom: 42px;
 }
 
-h1{
-font-size:46px;
-margin:0;
-color:#3d3d3d;
-letter-spacing:-0.0125em;
+h1 {
+  font-size: 42px;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
 }
 
-header p{
-color:#828282;
+header p {
+  color: #828282;
+  margin: 0;
 }
 
-.section{
-margin-top:40px;
+.section {
+  margin-top: 34px;
 }
 
-.section h2{
-margin-bottom:15px;
-font-size:20px;
-color:#828282;
-font-weight:normal;
-letter-spacing:-0.0125em;
+.section h2 {
+  margin: 0 0 14px;
+  font-size: 21px;
+  color: #828282;
+  font-weight: 500;
 }
 
-.card{
-display:flex;
-align-items:center;
-gap:14px;
-background:#4696e5;
-padding:16px;
-border-radius:10px;
-margin-bottom:12px;
-text-decoration:none;
-color:white;
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #4696e5;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  color: white;
+  text-decoration: none;
 }
 
-.card img{
-width:24px;
-height:24px;
+.card img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
 }
 
-.info strong{
-display:block;
-font-size:16px;
+.info strong {
+  display: block;
+  font-size: 17px;
 }
 
-.info span{
-font-size:13px;
-color:rgba(255,255,255,0.75);
+.info span {
+  display: block;
+  font-size: 14px;
+  font-family: Consolas, monospace;
+  color: rgba(255, 255, 255, .9);
 }
 
-footer{
-text-align:center;
-margin-top:60px;
-color:#828282;
-font-size:13px;
+.info small {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, .8);
+  margin-top: 5px;
 }
 
-@media (max-width:600px){
-h1{
-font-size:34px;
+.print-area {
+  text-align: center;
+  margin-top: 40px;
 }
-.container{
-padding:40px 16px;
+
+.print-btn {
+  background: #4696e5;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
+
+.print-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+@media print {
+  .print-area, .print-btn { display: none; }
+  body { background: white; }
+  .card { break-inside: avoid; }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 32px; }
+  .container { padding: 32px 16px 50px; }
 }
 </style>
-
 </head>
 
 <body>
-
 <div class="container">
 
 <header>
-<h1>Pip Chell - Phone Directory</h1>
-<p>People · Call Handling · Codes</p>
+  <h1>Phone Directory</h1>
+  <p>People · Call Handling · Codes</p>
 </header>
 
 <div class="section">
 
 <h2>Important</h2>
 
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Voicemail</strong>
-<span>99999</span>
+<div class="card">
+  <img src="/icons/whitelogo.png" alt="">
+  <div class="info"><strong>Voicemail</strong><span>99999</span></div>
 </div>
-</a>
 
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Set Avalible Status</strong>
-<span>*30</span>
+<div class="card">
+  <img src="/icons/whitelogo.png" alt="">
+  <div class="info"><strong>Set Available Status</strong><span>*30</span></div>
 </div>
-</a>
 
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Set Away Status</strong>
-<span>*31</span>
+<div class="card">
+  <img src="/icons/whitelogo.png" alt="">
+  <div class="info"><strong>Set Away Status</strong><span>*31</span></div>
 </div>
-</a>
 
-<h2>People</h2>  
-  
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Pip Chell</strong>
-<span>18510</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Pip Chell (IP Phone)</strong>
-<span>18511</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Simon Chell</strong>
-<span>18512</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Benji Chell</strong>
-<span>18513</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Network Admin</strong>
-<span>18514</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Kartik Bhatt</strong>
-<span>18515</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Jackie Bhatt</strong>
-<span>18516</span>
-</div>
-</a>
+<h2>People</h2>
+<div id="people"></div>
 
 <h2>Call Handling</h2>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Digital Receptionist</strong>
-<span>18560</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Pip Ring Group (Mobile & IP)</strong>
-<span>18561</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>External Line (In Dev!)</strong>
-<span>18562</span>
-</div>
-</a>
+<div id="handling"></div>
 
 <h2>Phone Codes</h2>
+<div id="codes"></div>
 
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Park A Call</strong>
-<span>*0[0-9]</span>
+<div class="print-area">
+  <button class="print-btn" onclick="window.print()">
+    <img src="/icons/print.png" alt="">
+    Print Directory
+  </button>
 </div>
-</a>
 
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Pick Up Parked Call</strong>
-<span>*1[0-9]</span>
 </div>
-</a>
+</div>
 
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Pick Up Specific Parked Call</strong>
-<span>*1[orbit][ext]</span>
-</div>
-</a>
+<script>
+const icon = "/icons/whitelogo.png";
 
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Call Pickup (Specific Extention)</strong>
-<span>*20*&lt;extension&gt;</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Call Pickup (Longest Ringing)</strong>
-<span>*20*</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Log Into Queues</strong>
-<span>*62</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Log Out Of Queues</strong>
-<span>*63</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Set Status To Avalible</strong>
-<span>*30</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Set Status To Away</strong>
-<span>*31</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Set Status To Do Not Disturb</strong>
-<span>*32</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Leave Voicemail</strong>
-<span>*4&lt;extension&gt;</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Intercom / Paging Call</strong>
-<span>*9&lt;extension&gt;</span>
-</div>
-</a>
-
-<a class="card">
-<img src="/icons/whitelogo.png" alt="pipchell.com Icon">
-<div class="info">
-<strong>Billing Code Tag</strong>
-<span>Number**BillingCode</span>
-</div>
-</a>
+function renderList(targetId, data) {
+  const container = document.getElementById(targetId);
+  if (!container) return;
   
-</div>
-</div>
+  container.innerHTML = data.map(([name, number, desc = ""]) => `
+    <div class="card">
+      <img src="${icon}" alt="">
+      <div class="info">
+        <strong>${name}</strong>
+        <span>${number}</span>
+        ${desc ? `<small>${desc}</small>` : ""}
+      </div>
+    </div>
+  `).join("");
+}
 
-</div>
+renderList("people", [
+  ["Pip Chell", "18510"],
+  ["Pip Chell (IP Phone)", "18511"],
+  ["Simon Chell", "18512"],
+  ["Benji Chell", "18513"],
+  ["Network Admin", "18514"],
+  ["Kartik Bhatt", "18515"],
+  ["Jackie Bhatt", "18516"]
+]);
+
+renderList("handling", [
+  ["Digital Receptionist", "18560"],
+  ["Pip Ring Group (Mobile & IP)", "18561"],
+  ["External Line (In Dev!)", "18562"]
+]);
+
+renderList("codes", [
+  ["Park A Call", "*0[0-9]", "Parks a call into a parking orbit. Example: *03 parks a call in orbit 3."],
+  ["Pick Up Parked Call", "*1[0-9]", "Retrieves a parked call. Example: *13 retrieves orbit 3."],
+  ["Pick Up Specific Parked Call", "*1[orbit][ext]", "Retrieves a parked call for a specific extension. Example: *1318510."],
+  ["Call Pickup (Specific Extension)", "*20*<extension>", "Answers another ringing extension. Example: *20*18512."],
+  ["Call Pickup (Longest Ringing)", "*20*", "Answers the longest ringing extension you can access."],
+  ["Log Into Queues", "*62", "Logs your extension into assigned queues."],
+  ["Log Out Of Queues", "*63", "Logs your extension out of assigned queues."],
+  ["Set Status To Available", "*30", "Changes status to Available."],
+  ["Set Status To Away", "*31", "Changes status to Away."],
+  ["Set Status To Do Not Disturb", "*32", "Changes status to DND."],
+  ["Leave Voicemail", "*4<extension>", "Leave voicemail without ringing. Example: *418510."],
+  ["Intercom / Paging Call", "*9<extension>", "Starts an intercom call. Example: *918511."],
+  ["Billing Code Tag", "Number**BillingCode", "Adds a billing code. Example: 01234567890**SALES01."]
+]);
+</script>
 
 </body>
 </html>
