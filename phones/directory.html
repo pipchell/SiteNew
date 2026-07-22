@@ -67,7 +67,9 @@ header p {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  display: block; /* Prevents inline whitespace gaps */
+  display: block;
+  position: relative;
+  top: 2px; /* Shifts icon down without breaking layout flow */
 }
 
 .info strong {
