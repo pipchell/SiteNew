@@ -53,7 +53,7 @@ header p {
 
 .card {
   display: flex;
-  align-items: flex-start; /* Keeps children aligned to the top */
+  align-items: flex-start;
   gap: 16px;
   background: #4696e5;
   padding: 18px;
@@ -69,14 +69,14 @@ header p {
   flex-shrink: 0;
   display: block;
   position: relative;
-  top: 2px; /* Shifts icon down without breaking layout flow */
+  top: 2px;
 }
 
 .info strong {
   display: block;
   font-size: 17px;
-  line-height: 1; /* Removes extra line-height spacing above the text */
-  margin-bottom: 4px; /* Restores small space between title and extension */
+  line-height: 1;
+  margin-bottom: 4px;
 }
 
 .info span {
@@ -175,15 +175,13 @@ header p {
 </div>
 
 <script>
-const icon = "/icons/whitelogo.png";
-
-function renderList(targetId, data) {
+function renderList(targetId, iconPath, data) {
   const container = document.getElementById(targetId);
   if (!container) return;
   
   container.innerHTML = data.map(([name, number, desc = ""]) => `
     <div class="card">
-      <img src="${icon}" alt="">
+      <img src="${iconPath}" alt="">
       <div class="info">
         <strong>${name}</strong>
         <span>${number}</span>
@@ -193,7 +191,8 @@ function renderList(targetId, data) {
   `).join("");
 }
 
-renderList("people", [
+// People section using p.png
+renderList("people", "/icons/p.png", [
   ["Pip Chell", "18510"],
   ["Pip Chell (IP Phone)", "18511"],
   ["Simon Chell", "18512"],
@@ -203,13 +202,15 @@ renderList("people", [
   ["Jackie Bhatt", "18516"]
 ]);
 
-renderList("handling", [
+// Call Handling section using p.png
+renderList("handling", "/icons/p.png", [
   ["Digital Receptionist", "18560"],
   ["Pip Ring Group (Mobile & IP)", "18561"],
   ["External Line (In Dev!)", "18562"]
 ]);
 
-renderList("codes", [
+// Phone Codes section using d.png
+renderList("codes", "/icons/d.png", [
   ["Park A Call", "*0[0-9]", "Parks a call into a parking orbit. Example: *03 parks a call in orbit 3."],
   ["Pick Up Parked Call", "*1[0-9]", "Retrieves a parked call. Example: *13 retrieves orbit 3."],
   ["Pick Up Specific Parked Call", "*1[orbit][ext]", "Retrieves a parked call for a specific extension. Example: *1318510."],
