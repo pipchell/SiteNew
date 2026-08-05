@@ -1,10 +1,10 @@
 User-agent: *
 
-Allow: /
-Allow: /me
-Allow: /directory
-Allow: /support
-Allow: /brandhub
+Disallow: /
+Disallow: /me
+Disallow: /directory
+Disallow: /support
+Disallow: /brandhub
 
 Disallow: /terms
 Disallow: /stuff
