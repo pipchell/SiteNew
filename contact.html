@@ -26,9 +26,32 @@
       background-image: none !important;
       animation: none !important;
       transform: none !important;
+      pointer-events: none !important;
+      z-index: 0 !important;
     }
 
-    #main { padding: 2rem 1rem; }
+    #overlay {
+      display: none !important;
+      pointer-events: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      z-index: -1 !important;
+    }
+
+    #wrapper {
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    #main {
+      padding: 2rem 1rem;
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative;
+      z-index: 3 !important;
+      transform: none !important;
+    }
 
     .contact-panel {
       max-width: 68rem;
