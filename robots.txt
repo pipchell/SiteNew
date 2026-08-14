@@ -1,7 +1,7 @@
 User-agent: *
 
 Disallow: /
-Disallow: /me
+Disallow: /contact
 Disallow: /directory
 Disallow: /support
 Disallow: /brandhub
