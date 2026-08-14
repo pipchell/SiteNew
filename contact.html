@@ -1,211 +1,306 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<title>Pip Chell - Contact</title>
-	<meta name="description" content="How to contact Pip Chell." />
-	<meta name="theme-color" content="#4696e5" />
-	<meta property="og:title" content="Pip Chell - Contact" />
-	<meta property="og:description" content="How to contact Pip Chell." />
-	<meta property="og:url" content="https://pipchell.com/contact" />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="https://pipchell.com/preview.png" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-	<link rel="canonical" href="https://pipchell.com/contact" />
-	<link rel="icon" href="/favicon.ico" sizes="any" />
-	<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
-	<link rel="stylesheet" href="assets2/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets2/css/noscript.css" /></noscript>
-	<style>
-		#bg {
-			background: linear-gradient(135deg, #4696e5 0%, #3b7fc0 45%, #2f5f96 100%) !important;
-			background-image: none !important;
-			animation: none !important;
-			transform: none !important;
-		}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Pip Chell - Contact</title>
+  <meta name="description" content="How to contact Pip Chell." />
+  <meta name="theme-color" content="#4696e5" />
+  <meta property="og:title" content="Pip Chell - Contact" />
+  <meta property="og:description" content="How to contact Pip Chell." />
+  <meta property="og:url" content="https://pipchell.com/contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pipchell.com/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <link rel="canonical" href="https://pipchell.com/contact" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
+  <link rel="stylesheet" href="assets2/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets2/css/noscript.css" /></noscript>
 
-		#main {
-			padding: 2rem 1rem;
-		}
+  <style>
+    /* Page background and panel */
+    #bg {
+      background: linear-gradient(135deg, #4696e5 0%, #3b7fc0 45%, #2f5f96 100%) !important;
+      background-image: none !important;
+      animation: none !important;
+      transform: none !important;
+    }
 
-		.contact-panel {
-			max-width: 58rem;
-			margin: 0 auto;
-			background: rgba(251, 251, 251, 0.94);
-			border-radius: 18px;
-			padding: 2.5rem 2rem;
-			box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
-			backdrop-filter: blur(10px);
-		}
+    #main { padding: 2rem 1rem; }
 
-		.contact-grid {
-			display: grid;
-			grid-template-columns: 1.1fr 0.9fr;
-			gap: 2rem;
-			align-items: start;
-		}
+    .contact-panel {
+      max-width: 68rem;
+      margin: 0 auto;
+      background: rgba(251, 251, 251, 0.96);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+      backdrop-filter: blur(8px);
+    }
 
-		@media (max-width: 980px) {
-			.contact-grid { grid-template-columns: 1fr; }
-		}
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: start;
+    }
 
-		.contact-hero h1 {
-			margin: 0 0 0.25rem 0;
-			font-size: 2.4rem;
-		}
+    @media (max-width: 980px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
 
-		.contact-hero p {
-			margin: 0 0 1rem 0;
-			font-size: 1.05rem;
-			color: #666;
-		}
+    .contact-hero h1 {
+      margin: 0 0 0.25rem 0;
+      font-size: 2.4rem;
+    }
 
-		.contact-badge {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.55rem;
-			padding: 0.45rem 0.8rem;
-			border-radius: 999px;
-			background: rgba(70, 150, 229, 0.1);
-			color: #2f6fa8;
-			font-size: 0.92rem;
-			margin-bottom: 1rem;
-		}
+    .contact-hero p {
+      margin: 0 0 1rem 0;
+      font-size: 1.05rem;
+      color: #555;
+    }
 
-		.contact-card {
-			background: #ffffff;
-			border: 1px solid rgba(0, 0, 0, 0.06);
-			border-radius: 14px;
-			padding: 1.35rem;
-			margin-top: 1rem;
-		}
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+      background: rgba(70,150,229,0.12);
+      color: #2f6fa8;
+      font-size: .95rem;
+      margin-bottom: 1rem;
+    }
 
-		.contact-card h2,
-		.contact-links h2 {
-			font-size: 1.2rem;
-			margin: 0 0 0.9rem 0;
-		}
+    /* Form */
+    form.contact-form {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
 
-		.contact-card p {
-			margin: 0 0 0.75rem 0;
-			color: #555;
-		}
+    .form-row { display:flex; gap: .75rem; margin-bottom: .75rem; }
+    .form-row .field { flex:1; min-width:0; }
+    label { display:block; font-weight:600; margin-bottom: .35rem; font-size: .93rem; color:#2e2e2e; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width:100%;
+      padding: .6rem .75rem;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+      font-size: .95rem;
+      background: #fbfbfb;
+      box-sizing: border-box;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .form-help { font-size: .88rem; color:#777; margin-top:.35rem; }
 
-		.contact-actions {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.75rem;
-			margin-top: 1rem;
-		}
+    .actions { display:flex; gap:.6rem; margin-top: .8rem; flex-wrap:wrap; }
+    .button { display:inline-flex; align-items:center; gap:.5rem; padding:.55rem .9rem; border-radius:8px; text-decoration:none; border:1px solid #e0e0e0; background:#fff; color:#333; cursor:pointer; }
+    .button.primary { background: #4696e5; color: #fff; border-color: #3f86d0; box-shadow: 0 4px 10px rgba(70,150,229,0.12); }
 
-		.contact-links {
-			background: #fbfbfb;
-			border: 1px solid #e7e7e7;
-			border-radius: 14px;
-			padding: 1.35rem;
-		}
+    /* Side column links */
+    .contact-links {
+      background: #fbfbfb;
+      border: 1px solid #e7e7e7;
+      border-radius: 12px;
+      padding: 1rem;
+      font-size: .95rem;
+    }
+    .contact-item { display:flex; gap:.75rem; align-items:center; padding:.6rem; border-radius:8px; background:#fff; border:1px solid #ececec; margin-bottom:.6rem; text-decoration:none; color:#333; }
+    .contact-item small { color:#777; display:block; font-size:.88rem; }
+    .contact-item:hover { border-color:#4696e5; transform:translateY(-1px); }
 
-		.contact-links ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
+    .status { margin-top:.75rem; font-size:.95rem; color:#2f6fa8; font-weight:600; display:none; }
+    .status.error { color:#c04444; display:none; }
 
-		.contact-links li + li {
-			margin-top: 0.75rem;
-		}
+    /* Honeypot hidden off-screen */
+    .hp { position: absolute !important; left: -9999px !important; top: auto !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 
-		.contact-link {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			gap: 1rem;
-			padding: 0.95rem 1rem;
-			border-radius: 10px;
-			background: #ffffff;
-			border: 1px solid #ececec;
-			text-decoration: none;
-			color: #3d3d3d;
-		}
-
-		.contact-link:hover {
-			border-color: #4696e5;
-			transform: translateY(-1px);
-		}
-
-		.contact-link strong {
-			display: block;
-			font-size: 1rem;
-		}
-
-		.contact-link span {
-			display: block;
-			color: #777;
-			font-size: 0.92rem;
-		}
-
-		.contact-note {
-			margin-top: 1rem;
-			font-size: 0.92rem;
-			color: #777;
-		}
-
-		.footer-note {
-			text-align: center;
-			margin-top: 1.25rem;
-			color: #f5f5f5;
-			opacity: 0.9;
-			font-size: 0.92rem;
-		}
-	</style>
+    footer#footer { text-align:center; margin-top:1.25rem; color:#f5f5f5; opacity:.95; font-size:.92rem; }
+  </style>
 </head>
 <body class="is-preload">
-	<div id="wrapper">
-		<div id="bg"></div>
-		<div id="overlay"></div>
-		<div id="main">
-			<div class="contact-panel">
-				<div class="contact-grid">
-					<section class="contact-hero">
-						<div class="contact-badge">Get in touch</div>
-						<h1>Pip Chell</h1>
-						<p>Thanks for stopping by. If you want to send a message, the contact page is the best place to do it.</p>
+  <div id="wrapper">
+    <div id="bg"></div>
+    <div id="overlay"></div>
 
-						<div class="contact-card">
-							<h2>Start here</h2>
-							<p>Use the contact form to send a message directly. It keeps everything in one place and is the quickest way to reach me.</p>
-							<div class="contact-actions">
-								<a href="#contact-form" class="button primary">Open contact form</a>
-								<a href="index.html#contact" class="button">Back to home</a>
-							</div>
-							<div class="contact-note">Prefer something else? The links on the right cover email and WhatsApp too.</div>
-						</div>
-					</section>
+    <main id="main" role="main">
+      <div class="contact-panel" aria-labelledby="contactHeading">
+        <div class="contact-grid">
+          <section class="contact-hero" aria-labelledby="contactHeading">
+            <div class="contact-badge">Get in touch</div>
+            <h1 id="contactHeading">Contact</h1>
+            <p>Thanks for stopping by. Use the form below for messages — it's quick and keeps everything in one place. Or use one of the other options in the sidebar.</p>
 
-					<aside class="contact-links" aria-label="Contact links">
-						<h2>Other ways to reach me</h2>
-						<ul>
-							<li><a class="contact-link" href="mailto:hi@pipchell.com"><span><strong>Email</strong><span>Send a direct email</span></span><span>↗</span></a></li>
-							<li><a class="contact-link" href="tel:+443330384665"><span><strong>Phone</strong><span>Call me on my UK number</span></span><span>↗</span></a></li>
-							<li><a class="contact-link" href="https://short.pipchell.com/whatsapp" target="_blank" rel="noopener noreferrer"><span><strong>WhatsApp</strong><span>Message me on WhatsApp</span></span><span>↗</span></a></li>
-						</ul>
-					</aside>
-				</div>
-			</div>
+            <form id="contact-form" class="contact-form" novalidate>
+              <!-- Replace FORM_ENDPOINT below with your Formspree endpoint or your server URL -->
+              <input type="hidden" name="_endpoint" value="https://formspree.io/f/mrekvapr" />
 
-			<footer id="footer">
-				<span class="copyright">&copy; 2026 Pip Chell.</span>
-				<span>Visit pipchell.com for more info.</span>
-			</footer>
-		</div>
-	</div>
+              <!-- Honeypot - keep off-screen and not focusable -->
+              <label class="hp" for="hp_name">Leave this field empty</label>
+              <input class="hp" id="hp_name" name="_gotcha" autocomplete="off" tabindex="-1" />
 
-	<script>
-		window.onload = function() { document.body.classList.remove('is-preload'); }
-		window.ontouchmove = function() { return false; }
-		window.onorientationchange = function() { document.body.scrollTop = 0; }
-	</script>
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Your name</label>
+                  <input id="name" name="name" type="text" required aria-required="true" placeholder="e.g. Rowan Chell" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required aria-required="true" placeholder="you@example.com" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="subject">Subject</label>
+                  <input id="subject" name="subject" type="text" placeholder="Short subject" />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone (optional)</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+44 3330 384665" />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required aria-required="true" placeholder="Write your message..."></textarea>
+                <div class="form-help">I aim to reply within a few business days. Keep personal data minimal.</div>
+              </div>
+
+              <div class="actions">
+                <button type="submit" class="button primary" id="submitBtn">Send message</button>
+                <a class="button" href="mailto:hi@pipchell.com">Email directly</a>
+                <a class="button" href="index.html#contact">Back to home</a>
+              </div>
+
+              <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+              <div id="formError" class="status error" role="alert" aria-live="assertive"></div>
+            </form>
+          </section>
+
+          <aside class="contact-links" aria-label="Other ways to contact">
+            <h2>Other ways to reach me</h2>
+
+            <a class="contact-item" href="mailto:hi@pipchell.com">
+              <div>
+                <strong>Email</strong>
+                <small>hi@pipchell.com</small>
+              </div>
+              <div style="margin-left:auto;">↗</div>
+            </a>
+
+            <a class="contact-item" href="tel:+443330384665">
+              <div>
+                <strong>Phone</strong>
+                <small>+44 3330 384 665</small>
+              </div>
+              <div style="margin-left:auto;">↗</div>
+            </a>
+
+            <a class="contact-item" href="https://short.pipchell.com/whatsapp" target="_blank" rel="noopener noreferrer">
+              <div>
+                <strong>WhatsApp</strong>
+                <small>Message on WhatsApp</small>
+              </div>
+              <div style="margin-left:auto;">↗</div>
+            </a>
+
+            <div style="margin-top:.75rem; font-size:.9rem; color:#666;">
+              For security concerns, email <a href="mailto:site@pipchell.com">site@pipchell.com</a>.
+            </div>
+          </aside>
+        </div>
+
+        <footer id="footer">
+          <span>&copy; 2026 Pip Chell.</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Contact form handler - uses fetch to submit to Formspree or other endpoint.
+    (function(){
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('formStatus');
+      const error = document.getElementById('formError');
+      const submitBtn = document.getElementById('submitBtn');
+
+      function showStatus(msg) {
+        status.textContent = msg;
+        status.style.display = 'block';
+        error.style.display = 'none';
+      }
+      function showError(msg) {
+        error.textContent = msg;
+        error.style.display = 'block';
+        status.style.display = 'none';
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        // Simple HTML5 validity check
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        // Honeypot check (client-side)
+        const hp = form.querySelector('[name="_gotcha"]');
+        if (hp && hp.value) {
+          // silently treat as success to avoid giving clues to bots
+          showStatus('Message sent — thank you.');
+          form.reset();
+          return;
+        }
+
+        const endpoint = form.querySelector('[name="_endpoint"]').value || '';
+        if (!endpoint || endpoint === 'FORM_ENDPOINT') {
+          showError('No form endpoint configured. Replace the FORM_ENDPOINT value in the form with your Formspree or server endpoint.');
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        const data = new FormData(form);
+
+        // If using Formspree, you can POST to the URL directly
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            showStatus('Thanks — your message has been sent.');
+            form.reset();
+          } else {
+            const json = await res.json().catch(()=>null);
+            const msg = (json && (json.error || json.message)) ? (json.error || json.message) : 'Submission failed — please try again later.';
+            showError(msg);
+          }
+        } catch (err) {
+          showError('Network error — please try again later.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+        }
+      });
+    }());
+  </script>
+
+  <script>
+    // Small helpers used in the existing site
+    window.onload = function() { document.body.classList.remove('is-preload'); }
+    window.ontouchmove = function() { return false; }
+    window.onorientationchange = function() { document.body.scrollTop = 0; }
+  </script>
 </body>
 </html>
