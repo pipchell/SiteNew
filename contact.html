@@ -1,165 +1,211 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Pip Chell - Contact</title>
-        <meta property="og:image:width" content="500">
-        <meta property="og:image:height" content="500">
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<title>Pip Chell - Contact</title>
+	<meta name="description" content="How to contact Pip Chell." />
+	<meta name="theme-color" content="#4696e5" />
+	<meta property="og:title" content="Pip Chell - Contact" />
+	<meta property="og:description" content="How to contact Pip Chell." />
+	<meta property="og:url" content="https://pipchell.com/contact" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://pipchell.com/preview.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<link rel="canonical" href="https://pipchell.com/contact" />
+	<link rel="icon" href="/favicon.ico" sizes="any" />
+	<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
+	<link rel="stylesheet" href="assets2/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets2/css/noscript.css" /></noscript>
+	<style>
+		#bg {
+			background: linear-gradient(135deg, #4696e5 0%, #3b7fc0 45%, #2f5f96 100%) !important;
+			background-image: none !important;
+			animation: none !important;
+			transform: none !important;
+		}
 
-		<meta name="description" content="How to contact Pip Chell.">
-		<meta property="og:title" content="Pip Chell - Contact">
-		<meta property="og:description" content="How to contact Pip Chell.">
-		<meta property="og:url" content="https://pipchell.com/contact">
-		<meta property="og:type" content="website">
-		<link rel="canonical" href="https://pipchell.com/contact">
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-		<meta http-equiv='content-language' content='en-gb'>
+		#main {
+			padding: 2rem 1rem;
+		}
 
-		<!-- Open Graph -->
-<meta property="og:title" content="Pip Chell – Contact">
-<meta property="og:site_name" content="Pip Chell">
-<meta property="og:description" content="Graphic designer and developer creating commercial and personal projects.">
-<meta property="og:url" content="https://pipchell.com/contact">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://pipchell.com/preview.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+		.contact-panel {
+			max-width: 58rem;
+			margin: 0 auto;
+			background: rgba(251, 251, 251, 0.94);
+			border-radius: 18px;
+			padding: 2.5rem 2rem;
+			box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+			backdrop-filter: blur(10px);
+		}
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pip Chell – Contact">
-<meta name="twitter:description" content="Graphic designer and developer creating commercial and personal projects.">
-<meta name="twitter:image" content="https://pipchell.com/preview.png">
+		.contact-grid {
+			display: grid;
+			grid-template-columns: 1.1fr 0.9fr;
+			gap: 2rem;
+			align-items: start;
+		}
 
+		@media (max-width: 980px) {
+			.contact-grid { grid-template-columns: 1fr; }
+		}
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Pip Chell",
-  "alternateName": "pipchell.com",
-  "url": "https://pipchell.com"
-}
-</script>
+		.contact-hero h1 {
+			margin: 0 0 0.25rem 0;
+			font-size: 2.4rem;
+		}
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Contact - Pip Chell",
-  "url": "https://pipchell.com/contact",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Pip Chell",
-    "url": "https://pipchell.com"
-  }
-}
-</script>
+		.contact-hero p {
+			margin: 0 0 1rem 0;
+			font-size: 1.05rem;
+			color: #666;
+		}
 
-		<link rel="icon" href="/favicon.ico" sizes="any">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets2/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets2/css/noscript.css" /></noscript>
+		.contact-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.55rem;
+			padding: 0.45rem 0.8rem;
+			border-radius: 999px;
+			background: rgba(70, 150, 229, 0.1);
+			color: #2f6fa8;
+			font-size: 0.92rem;
+			margin-bottom: 1rem;
+		}
 
-		<style>
-			#bg {
-				background-color: #4493E0 !important;
-				background-image: none !important;
-				animation: none !important;
-				transform: none !important;
-			}
+		.contact-card {
+			background: #ffffff;
+			border: 1px solid rgba(0, 0, 0, 0.06);
+			border-radius: 14px;
+			padding: 1.35rem;
+			margin-top: 1rem;
+		}
 
-			body, input, select, textarea {
-				font-family: Arial, Helvetica, sans-serif !important;
-				font-weight: normal !important;
-				line-height: 1.5em !important;
-				letter-spacing: -0.015em !important;
-			}
+		.contact-card h2,
+		.contact-links h2 {
+			font-size: 1.2rem;
+			margin: 0 0 0.9rem 0;
+		}
 
-			h1, h2, h3, h4, h5, h6 {
-				font-weight: bold !important;
-			}
+		.contact-card p {
+			margin: 0 0 0.75rem 0;
+			color: #555;
+		}
 
-			strong, b {
-				font-weight: bold !important;
-			}
+		.contact-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+			margin-top: 1rem;
+		}
 
-			.contact-details {
-				max-width: 34rem;
-				margin: 1rem auto 0;
-				text-align: left;
-			}
+		.contact-links {
+			background: #fbfbfb;
+			border: 1px solid #e7e7e7;
+			border-radius: 14px;
+			padding: 1.35rem;
+		}
 
-			.contact-details p {
-				margin: 0 0 0.75rem 0;
-			}
+		.contact-links ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 
-			.contact-details code {
-				display: block;
-				background: rgba(0, 0, 0, 0.15);
-				padding: 0.75rem;
-				border-radius: 0.4rem;
-				font-size: 0.9rem;
-				line-height: 1.4;
-				white-space: normal;
-				word-break: break-word;
-			}
-		</style>
-	</head>
+		.contact-links li + li {
+			margin-top: 0.75rem;
+		}
 
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+		.contact-link {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1rem;
+			padding: 0.95rem 1rem;
+			border-radius: 10px;
+			background: #ffffff;
+			border: 1px solid #ececec;
+			text-decoration: none;
+			color: #3d3d3d;
+		}
 
-				<header id="header">
-					<h1>Pip Chell</h1>
-					<p>Call, email, or live chat.</p>
-					<div class="contact-details">
-						<p><strong>Call:</strong> <a href="tel:+443330384665">+44 333 038 4665</a><br>UK-only calling (calls from outside the UK are not supported).</p>
-						<p><strong>Email:</strong> <a href="mailto:hi@pipchell.com">hi@pipchell.com</a></p>
-						<p><strong>Live chat:</strong></p>
-						<call-us-selector phonesystem-url="https://1252.3cx.cloud" party="pipchellcom"></call-us-selector>
-						<script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
-						<!--
-						<call-us
-							phonesystem-url="https://1252.3cx.cloud"
-							style="position: fixed; z-index: 99999; --call-us-form-header-background:#4285f4; --call-us-form-width: 320px; --call-us-form-height: 500px;"
-							id="wp-live-chat-by-3CX"
-							minimized="true"
-							animation-style="noanimation"
-							party="pipchellcom"
-							allow-call="true"
-							allow-video="false"
-							allow-soundnotifications="true"
-							enable-mute="true"
-							enable-onmobile="true"
-							offline-enabled="true"
-							enable="true"
-							ignore-queueownership="false"
-							authentication="name"
-							showoperatoractualname="true"
-							aknowledge-received="true"
-							gdpr-enabled="false"
-							message-userinfo-format="both"
-						></call-us>
-						-->
-					</div>
-				</header>
+		.contact-link:hover {
+			border-color: #4696e5;
+			transform: translateY(-1px);
+		}
 
-				<footer id="footer">
-					<span class="copyright">&copy; 2026 Pip Chell.</span>
-					<span>Visit pipchell.com for more info.</span>
-				</footer>
+		.contact-link strong {
+			display: block;
+			font-size: 1rem;
+		}
 
+		.contact-link span {
+			display: block;
+			color: #777;
+			font-size: 0.92rem;
+		}
+
+		.contact-note {
+			margin-top: 1rem;
+			font-size: 0.92rem;
+			color: #777;
+		}
+
+		.footer-note {
+			text-align: center;
+			margin-top: 1.25rem;
+			color: #f5f5f5;
+			opacity: 0.9;
+			font-size: 0.92rem;
+		}
+	</style>
+</head>
+<body class="is-preload">
+	<div id="wrapper">
+		<div id="bg"></div>
+		<div id="overlay"></div>
+		<div id="main">
+			<div class="contact-panel">
+				<div class="contact-grid">
+					<section class="contact-hero">
+						<div class="contact-badge">Get in touch</div>
+						<h1>Pip Chell</h1>
+						<p>Thanks for stopping by. If you want to send a message, the contact page is the best place to do it.</p>
+
+						<div class="contact-card">
+							<h2>Start here</h2>
+							<p>Use the contact form to send a message directly. It keeps everything in one place and is the quickest way to reach me.</p>
+							<div class="contact-actions">
+								<a href="#contact-form" class="button primary">Open contact form</a>
+								<a href="index.html#contact" class="button">Back to home</a>
+							</div>
+							<div class="contact-note">Prefer something else? The links on the right cover email and WhatsApp too.</div>
+						</div>
+					</section>
+
+					<aside class="contact-links" aria-label="Contact links">
+						<h2>Other ways to reach me</h2>
+						<ul>
+							<li><a class="contact-link" href="mailto:hi@pipchell.com"><span><strong>Email</strong><span>Send a direct email</span></span><span>↗</span></a></li>
+							<li><a class="contact-link" href="tel:+443330384665"><span><strong>Phone</strong><span>Call me on my UK number</span></span><span>↗</span></a></li>
+							<li><a class="contact-link" href="https://short.pipchell.com/whatsapp" target="_blank" rel="noopener noreferrer"><span><strong>WhatsApp</strong><span>Message me on WhatsApp</span></span><span>↗</span></a></li>
+						</ul>
+					</aside>
+				</div>
 			</div>
-		</div>
 
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+			<footer id="footer">
+				<span class="copyright">&copy; 2026 Pip Chell.</span>
+				<span>Visit pipchell.com for more info.</span>
+			</footer>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function() { document.body.classList.remove('is-preload'); }
+		window.ontouchmove = function() { return false; }
+		window.onorientationchange = function() { document.body.scrollTop = 0; }
+	</script>
+</body>
 </html>
