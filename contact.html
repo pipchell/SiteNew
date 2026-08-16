@@ -130,20 +130,18 @@ padding:40px 16px;
 }
 
 /*
-  3CX Live Chat widget spacing fix - CSS only, no JS.
-  A single static !important override, applied once via the stylesheet
-  (not re-applied at runtime), so it's in place before the widget's own
-  script measures/positions itself - unlike the earlier JS approach, which
-  kept moving things after the widget had already calculated the popup
-  window's position, causing the misalignment.
-  Kept deliberately small and constant across breakpoints to minimize the
-  risk of throwing off the widget's internal layout math again.
+  3CX Live Chat widget spacing fix - margin-based, not right/bottom override.
+  3CX's script actively manages the "right"/"bottom" inline style properties
+  on this element (that's what broke last time - overriding those threw off
+  its internal popup-window positioning math). Margin is a property 3CX's
+  script does not touch, so this adds extra breathing room on top of
+  whatever right/bottom value they set, without fighting them directly.
 */
 #wp-live-chat-by-3CX,
 call-us-selector,
 #callus-container{
-right:14px !important;
-bottom:14px !important;
+margin-right:12px;
+margin-bottom:12px;
 }
 
 </style>
