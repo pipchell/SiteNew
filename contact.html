@@ -134,9 +134,20 @@ padding:40px 16px;
   (--call-us-form-width/-height) were confirmed non-functional - DevTools
   showed the widget's own script overrides them regardless of screen size.
   Popup sizing can't be controlled from page-side code with this widget
-  version. Mobile is disabled entirely instead, via enable-onmobile="false"
-  on the <call-us> tag, since that's a setting the widget actually honors.
+  version.
+
+  The widget's own "enable-onmobile" attribute crashes it entirely (broke
+  desktop too), so it's left at "true". Instead, mobile is hidden by wrapping
+  the <call-us> tag in #chat-widget-wrapper below and hiding THAT via CSS -
+  the widget's script only manages its own element, not our wrapper, so this
+  should be safe from the override-fighting we saw with right/bottom and
+  the form-width/height properties.
 */
+@media (max-width:900px){
+#chat-widget-wrapper{
+display:none !important;
+}
+}
 
 </style>
 
@@ -194,7 +205,11 @@ padding:40px 16px;
 
 <!-- 3CX Live Chat Widget (manual/static config - NOT real-time synced with PBX)
      If you change settings in the 3CX admin panel, regenerate this snippet
-     from 3CX and paste it back in here, adjusting right/bottom below again. -->
+     from 3CX and paste it back in here, adjusting right/bottom below again.
+     Wrapped in #chat-widget-wrapper so it can be hidden on mobile/tablet via
+     CSS (see the @media rule near the top of the <style> block) without
+     touching the widget's own attributes, which crash it if set wrong. -->
+<div id="chat-widget-wrapper">
 <call-us
 phonesystem-url="https://1252.3cx.cloud"
 style="position:fixed;font-size:16px;line-height:17px;z-index: 99999;--call-us-main-accent-color:#14A5FF;--call-us-main-background-color:#404040;--call-us-plate-background-color:#373737;--call-us-plate-font-color:#D9D9D9;--call-us-main-font-color:#FFFFFF;--call-us-agent-bubble-color:#FFFFFF10;--call-us-form-width:min(300px, calc(100vw - 40px));--call-us-form-height:min(480px, calc(100vh - 140px));right: 26px; bottom: 26px;"
@@ -207,7 +222,7 @@ allow-call="false"
 allow-video="false"
 allow-soundnotifications="true"
 enable-mute="true"
-enable-onmobile="false"
+enable-onmobile="true"
 offline-enabled="true"
 enable="true"
 ignore-queueownership="false"
@@ -236,6 +251,7 @@ chat-delay="2000"
 enable-direct-call="false"
 enable-ga="false"
 ></call-us>
+</div>
 <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
 
 </body>
