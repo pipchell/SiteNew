@@ -58,7 +58,7 @@ padding:60px 20px;
 }
 
 header{
-text-align:center;
+text-align:left;
 margin-bottom:50px;
 }
 
@@ -115,9 +115,51 @@ color:rgba(255,255,255,0.75);
 
 footer{
 text-align:center;
-margin-top:60px;
+margin-top:24px;
 color:#828282;
 font-size:13px;
+}
+
+footer .limitations{
+max-width:480px;
+margin:0 0 24px;
+text-align:left;
+}
+
+footer .copyright{
+margin:20px 0 0;
+text-align:left;
+}
+
+footer .limitations p{
+margin:0 0 6px;
+font-size:12px;
+font-weight:normal;
+letter-spacing:0.02em;
+color:#a8a8a8;
+text-align:left;
+}
+
+footer .limitations ul{
+margin:0;
+padding:0;
+list-style:none;
+}
+
+footer .limitations li{
+font-size:13px;
+font-weight:normal;
+line-height:1.5;
+padding-left:14px;
+position:relative;
+margin-bottom:6px;
+}
+
+footer .limitations li::before{
+content:"•";
+position:absolute;
+left:0;
+color:#c2c2c2;
 }
 
 @media (max-width:600px){
@@ -198,13 +240,17 @@ display:none !important;
 </div>
 
 <footer>
-© Pip Chell 2026
 
-Known Limitations:
+<div class="limitations">
+<p>Known Limitations</p>
 <ul>
 <li>Live chat does not work on mobile, as the screen size is too small to fit the window.</li>
-<li>Calling is restricted to the UK are due to charges for us and you. Calling is avaliable on WhatsApp internationaly.</li>
+<li>Calling is restricted to the UK area due to charges for us and you. Calling is available on WhatsApp internationally.</li>
 </ul>
+</div>
+
+<p class="copyright">© Pip Chell 2026</p>
+
 </footer>
 
 </div>
