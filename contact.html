@@ -129,37 +129,6 @@ padding:40px 16px;
 }
 }
 
-/*
-  3CX chat popup size, tailored per device size.
-  These override the --call-us-form-width/-height custom properties set in
-  the widget's own style attribute. Kept as fixed values per tier rather
-  than the earlier fluid calc(), for a more deliberately "designed" size at
-  each breakpoint. If this causes the same kind of glitch the right/bottom
-  override did earlier, remove this block and rely on the inline min()/calc()
-  fallback values in the <call-us> tag instead.
-*/
-@media (max-width:480px){
-#wp-live-chat-by-3CX{
---call-us-form-width:calc(100vw - 48px) !important;
---call-us-form-height:calc(100vh - 150px) !important;
---call-us-form-height:calc(100dvh - 150px) !important;
-}
-}
-
-@media (min-width:481px) and (max-width:900px){
-#wp-live-chat-by-3CX{
---call-us-form-width:340px !important;
---call-us-form-height:500px !important;
-}
-}
-
-@media (min-width:901px){
-#wp-live-chat-by-3CX{
---call-us-form-width:380px !important;
---call-us-form-height:560px !important;
-}
-}
-
 </style>
 
 </head>
@@ -194,7 +163,7 @@ padding:40px 16px;
 <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
 <div class="info">
 <strong>Live Chat</strong>
-<span>Open the chat bubble in the bottom-right corner</span>
+<span>Avalible in bottom right corner of screen · Desktop / tablet only</span>
 </div>
 </div>
 
@@ -213,10 +182,7 @@ padding:40px 16px;
 </footer>
 
 </div>
-
-<!-- 3CX Live Chat Widget (manual/static config - NOT real-time synced with PBX)
-     If you change settings in the 3CX admin panel, regenerate this snippet
-     from 3CX and paste it back in here, adjusting right/bottom below again. -->
+  
 <call-us
 phonesystem-url="https://1252.3cx.cloud"
 style="position:fixed;font-size:16px;line-height:17px;z-index: 99999;--call-us-main-accent-color:#14A5FF;--call-us-main-background-color:#404040;--call-us-plate-background-color:#373737;--call-us-plate-font-color:#D9D9D9;--call-us-main-font-color:#FFFFFF;--call-us-agent-bubble-color:#FFFFFF10;--call-us-form-width:min(300px, calc(100vw - 40px));--call-us-form-height:min(480px, calc(100vh - 140px));right: 26px; bottom: 26px;"
@@ -230,7 +196,7 @@ allow-call="false"
 allow-video="false"
 allow-soundnotifications="true"
 enable-mute="true"
-enable-onmobile="true"
+enable-onmobile="false"
 offline-enabled="true"
 enable="true"
 ignore-queueownership="false"
