@@ -621,7 +621,7 @@
   // State
   let w, h, flakes = [];
   let countdownEnded = false;
-  let weatherEnabled = true;
+  let weatherEnabled = false;   // off until the visitor turns it on: it looks up their location
   let weatherTimeout = null;
   let autoZoomSet = false;
   let lastWeatherUpdate = 0; // Track last weather update time
@@ -651,7 +651,7 @@
   function loadPreferences() {
     // Load preferences from localStorage
     const savedWeatherPref = localStorage.getItem('weatherEnabled');
-    weatherEnabled = savedWeatherPref !== null ? savedWeatherPref === 'true' : true;
+    weatherEnabled = savedWeatherPref !== null ? savedWeatherPref === 'true' : false;
     weatherToggleBtn.classList.toggle('active', weatherEnabled);
     if (weatherEnabled) fetchWeather();
   }
@@ -812,10 +812,9 @@
       );
       
       Promise.race([
-        fetch('https://httpbin.org/get', { 
+        fetch('/favicon.ico?check=' + Date.now(), {   // this site's own icon, so no third party sees the visit
           method: 'HEAD',
-          cache: 'no-store',
-          mode: 'no-cors'
+          cache: 'no-store'
         }),
         timeoutPromise
       ])
